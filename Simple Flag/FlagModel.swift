@@ -7,8 +7,6 @@
 
 import Foundation
 
-struct Country {
-    var countryCode: Int
-    var countryName: String
-    var countryFlag: String
-}
+let countryCodes = Locale.Region.isoRegions.filter {$0.subRegions.isEmpty}.map {$0.identifier}
+
+var quizChoices: [String] = []

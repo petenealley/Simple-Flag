@@ -21,9 +21,23 @@ func generateCountryNames(_ countryCode: String) -> String {
 
 func generateRandomCountryCode() -> String {
     var choice: Int
-    choice = Int.random(in: 0...(countryCodes.count-1))
-    return countryCodes[choice]
+    choice = Int.random(in: 0...(remainingCountryCodes.count-1))
+    return remainingCountryCodes[choice]
 }
+
+func updateRemainingCountryCount() -> Int {
+    var totalRemainingCountries = remainingCountryCodes.count
+    return totalRemainingCountries
+}
+
+func createCurrentQuizFlagCodes() {
+    
+}
+
+func clearCurrentQizFlagCodes() {
+    currentQuizFlags = []
+}
+
 let answer = generateRandomCountryCode()
 let country = generateCountryNames(answer)
 let flag = generateCountryFlag(answer)

@@ -7,6 +7,10 @@
 
 import Foundation
 
-let countryCodes = Locale.Region.isoRegions.filter {$0.subRegions.isEmpty}.map {$0.identifier}
+var remainingCountryCodes = Locale.Region.isoRegions.filter {$0.subRegions.isEmpty}.map {$0.identifier}
 
-var quizChoices: [String] = []
+var currentQuizFlags: [String] = []
+
+var numberOfCorrectAnswers: Int = 0
+
+var numberOfWrongAnswers: Int = 0

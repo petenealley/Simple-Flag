@@ -23,9 +23,8 @@ func generateRandomCountryCode() -> String {
     return remainingCountryCodes[choice]
 }
 
-func updateRemainingCountryCount() -> Int {
+func updateRemainingCountryCount() {
     var totalRemainingCountries = remainingCountryCodes.count
-    return totalRemainingCountries
 }
 
 func createCurrentQuizFlagCodes() {

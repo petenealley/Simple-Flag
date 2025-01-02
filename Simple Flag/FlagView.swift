@@ -11,9 +11,9 @@ struct FlagView: View {
     var body: some View {
         VStack {
             
-            //Flag Button1
+            //leftFlagButton
             Button {
-                
+                // action code here
             } label: {
                 Text(flag)
                     .font(.system(size: 300))

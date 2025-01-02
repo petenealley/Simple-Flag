@@ -6,8 +6,6 @@
 //
 import Foundation
 
-//let countryCodes = Locale.Region.isoRegions.filter {$0.subRegions.isEmpty}.map {$0.identifier}
-
 func generateCountryFlag(_ countryCode: String) -> String {
     String(String.UnicodeScalarView(countryCode.unicodeScalars.compactMap {
         UnicodeScalar(127397 + $0.value)

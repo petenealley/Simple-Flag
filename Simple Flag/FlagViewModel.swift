@@ -4,7 +4,7 @@
 //
 //  Created by Pete Nealley on 12/31/24.
 //
-import Foundation
+import SwiftUI
 
 func generateCountryFlag(_ countryCode: String) -> String {
     String(String.UnicodeScalarView(countryCode.unicodeScalars.compactMap {

@@ -5,7 +5,7 @@
 //  Created by Pete Nealley on 12/31/24.
 //
 
-import Foundation
+import SwiftUI
 
 var remainingCountryCodes = Locale.Region.isoRegions.filter {$0.subRegions.isEmpty}.map {$0.identifier}
 

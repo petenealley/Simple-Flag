@@ -15,3 +15,4 @@ struct Simple_FlagApp: App {
         }
     }
 }
+

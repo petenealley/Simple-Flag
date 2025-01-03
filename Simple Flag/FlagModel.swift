@@ -17,5 +17,5 @@ var currentQuizFlagCodes: [String] = []
 
 var numberOfCorrectAnswers: Int = 0
 
-var numberOfWrongAnswers: Int = 0
+// var numberOfWrongAnswers: Int = 0
 

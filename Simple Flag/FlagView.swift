@@ -20,7 +20,7 @@ struct FlagView: View {
         VStack {
             
             //Country Code
-            Text(remainingCountryCodes[1])
+            Text(viewModel.leftFlagCode)
                 .font(.system(size: 48))
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .padding(.top, 30)
@@ -29,7 +29,7 @@ struct FlagView: View {
             Button(action: {
                 // Action goes here
             }, label: {
-                Text(viewModel.generateCountryFlag(remainingCountryCodes[1]))
+                Text(viewModel.leftFlag)
                     .font(.system(size: 300))
                     .padding(.vertical, -55)
                     .padding(.horizontal, 5)
@@ -38,7 +38,7 @@ struct FlagView: View {
             })
             
             //Country Name
-            Text(viewModel.generateCountryNames(remainingCountryCodes[1]))
+            Text(viewModel.leftName)
                 .font(.system(size: 48))
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .padding(.top, 30)

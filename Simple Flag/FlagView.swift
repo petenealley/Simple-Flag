@@ -10,6 +10,20 @@ import SwiftUI
 struct FlagView: View {
     @State private var showAlert1 = false
     var body: some View {
+        HStack {
+            LeftFlagView()
+            CenterFlagView()
+            RightFlagView()
+        }
+    }
+}
+
+#Preview(traits: .landscapeLeft) {
+    FlagView()
+}
+
+struct LeftFlagView: View {
+    var body: some View {
         VStack {
             
             //Country Code
@@ -20,7 +34,7 @@ struct FlagView: View {
             
             //leftFlagButton
             Button(action: {
-                showAlert1.toggle()
+                //action here
             }, label: {
                 Text(flag)
                     .font(.system(size: 300))
@@ -29,9 +43,6 @@ struct FlagView: View {
                     .background(.black.opacity(0.5))
                     .cornerRadius(40)
             })
-            .alert("System Alert", isPresented: $showAlert1) {
-                
-            }
             
             //Country Name
             Text(country)
@@ -44,6 +55,68 @@ struct FlagView: View {
     }
 }
 
-#Preview(traits: .landscapeLeft) {
-    FlagView()
+struct CenterFlagView: View {
+    var body: some View {
+        VStack {
+            
+            //Country Code
+            Text(answer)
+                .font(.system(size: 48))
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .padding(.top, 30)
+            
+            //leftFlagButton
+            Button(action: {
+                //action here
+            }, label: {
+                Text(flag)
+                    .font(.system(size: 300))
+                    .padding(.vertical, -55)
+                    .padding(.horizontal, 5)
+                    .background(.black.opacity(0.5))
+                    .cornerRadius(40)
+            })
+            
+            //Country Name
+            Text(country)
+                .font(.system(size: 48))
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .padding(.top, 30)
+            
+        }
+        .padding()
+    }
+}
+
+struct RightFlagView: View {
+    var body: some View {
+        VStack {
+            
+            //Country Code
+            Text(answer)
+                .font(.system(size: 48))
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .padding(.top, 30)
+            
+            //leftFlagButton
+            Button(action: {
+                //action here
+            }, label: {
+                Text(flag)
+                    .font(.system(size: 300))
+                    .padding(.vertical, -55)
+                    .padding(.horizontal, 5)
+                    .background(.black.opacity(0.5))
+                    .cornerRadius(40)
+            })
+            
+            //Country Name
+            Text(country)
+                .font(.system(size: 48))
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .padding(.top, 30)
+            
+        }
+        .padding()
+    }
 }

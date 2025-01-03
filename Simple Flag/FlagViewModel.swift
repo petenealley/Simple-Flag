@@ -6,6 +6,21 @@
 //
 import SwiftUI
 
+func getRandomNumbers(maxNumber: Int, listSize: Int)-> [Int]{
+    guard maxNumber < listSize else { return [] }
+    var indexSet = IndexSet(integersIn: 0...listSize)
+    var randomInts = [Int]()
+
+    while randomInts.count < maxNumber {
+        guard let currentInt = indexSet.integerLessThanOrEqualTo(Int(arc4random_uniform(UInt32(listSize)))) else {
+            continue
+        }
+        randomInts.append(currentInt)
+        indexSet.remove(currentInt)
+    }
+    return randomInts
+}
+
 func generateCountryFlag(_ countryCode: String) -> String {
     String(String.UnicodeScalarView(countryCode.unicodeScalars.compactMap {
         UnicodeScalar(127397 + $0.value)
@@ -23,8 +38,8 @@ func generateRandomCountryCode() -> String {
     return remainingCountryCodes[choice]
 }
 
-func updateRemainingCountryCount() {
-    var totalRemainingCountries = remainingCountryCodes.count
+func updateRemainingCountryCount() -> Int {
+    return remainingCountryCodes.count-1
 }
 
 func createCurrentQuizFlagCodes() {
@@ -32,9 +47,11 @@ func createCurrentQuizFlagCodes() {
 }
 
 func clearCurrentQizFlagCodes() {
-    currentQuizFlags = []
+    currentQuizFlagCodes = []
 }
 
-let answer = generateRandomCountryCode()
-let country = generateCountryNames(answer)
-let flag = generateCountryFlag(answer)
+var answer = generateRandomCountryCode()
+var country = generateCountryNames(answer)
+var flag = generateCountryFlag(answer)
+
+var temporaryFlagCodeIndexes = getRandomNumbers(maxNumber: totalRemainingCountryCodes, listSize: 3)

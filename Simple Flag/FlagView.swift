@@ -44,6 +44,6 @@ struct FlagView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .landscapeLeft) {
     FlagView()
 }
